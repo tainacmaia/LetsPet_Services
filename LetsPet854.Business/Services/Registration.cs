@@ -1,10 +1,12 @@
 ﻿using LetsPet854.Domain.Common.Enuns;
+using LetsPet854.Domain.Common;
 using LetsPet854.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LetsPet854.Common.Domain;
 
 namespace LetsPet854.Business
 {
@@ -21,13 +23,13 @@ namespace LetsPet854.Business
             newService.ServiceTime = 1;
             Console.WriteLine("O que você deseja cadastrar?");
             PrintEnum.ServiceType();
-            newService.Type = Enum.GetName(typeof(ServiceType), Validations.Options(1, 2));
+            newService.Type = Enumerations.GetDescription((ServiceType)Validations.Options(1, 2));
 
-            if (newService.Type == "Tosa")
+            if (newService.Type == "Grooming")
             {
                 Console.WriteLine("Qual o tipo de tosa a ser realizado?");
                 PrintEnum.GroomingType();
-                newService.GroomingType = Enum.GetName(typeof(GroomingType), Validations.Options(1, 3));
+                newService.GroomingType = Enumerations.GetDescription((GroomingType)Validations.Options(1, 3));
             }
             else
             {
@@ -36,11 +38,12 @@ namespace LetsPet854.Business
 
             Console.WriteLine("Para qual espécie é este serviço?");
             PrintEnum.Species();
-            newService.Species = Enum.GetName(typeof(Species), Validations.Options(1, 2));
+            newService.Species = Enumerations.GetDescription((Species)Validations.Options(1, 2));
 
             Console.WriteLine("Para qual porte é este serviço?");
             PrintEnum.BreedSize();
-            newService.Size = Enum.GetName(typeof(BreedSize), Validations.Options(1, 2));
+            //newService.Size = Enum.GetName(typeof(BreedSize), Validations.Options(1, 2));
+            newService.Size = Enumerations.GetDescription((BreedSize)Validations.Options(1, 2));
             newService.Employees = (newService.Size == "Grande")? 2 : 1;
 
             Console.WriteLine("É um serviço especial (S/N)?");
@@ -67,7 +70,7 @@ namespace LetsPet854.Business
 
             Console.WriteLine("Qual o tipo de serviço que terá desconto?");
             PrintEnum.ServiceType();
-            newDiscount.ServiceType = Enum.GetName(typeof(ServiceType), Validations.Options(1, 2));
+            newDiscount.ServiceType = Enumerations.GetDescription((ServiceType)Validations.Options(1, 2));
 
             Console.WriteLine("Após quantos atendimentos?");
             newDiscount.TotalAttendance = Validations.ValidInt();

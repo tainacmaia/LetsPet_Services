@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LetsPet854.Domain.Common.Enuns;
 using LetsPet854.Domain;
+using LetsPet854.Common.Domain;
 
 namespace LetsPet854.Domain
 {
