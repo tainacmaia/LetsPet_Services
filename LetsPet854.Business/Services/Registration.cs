@@ -17,6 +17,8 @@ namespace LetsPet854.Business
         public static void AddService()
         {
             Service newService = new();
+            newService.GroomingType = "";
+            newService.ServiceTime = 1;
             Console.WriteLine("O que você deseja cadastrar?");
             PrintEnum.ServiceType();
             newService.Type = Enum.GetName(typeof(ServiceType), Validations.Options(1, 2));

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LetsPet854.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,8 @@ namespace LetsPet854.Domain
         public string Name { get; set; }
         public bool Special { get; set; }
         public bool Lotion { get; set; }
-        public string GroomingType = "";
-        public int ServiceTime = 1;
+        public string GroomingType { get; set; }
+        public int ServiceTime { get; set; }
         public int Employees { get; set; }
         public double Price { get; set; }
 

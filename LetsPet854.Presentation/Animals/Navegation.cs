@@ -34,7 +34,7 @@ namespace LetsPet854.Presentation.Pets
                     case 2:
                         Console.Clear();
                         Console.WriteLine("Tela para Cadastrar Pet");
-                        RegisterAnimal.AnimalRegister();
+                        //RegisterAnimal.AnimalRegister();
                         MenuHeader();
                         break;
                     case 3:

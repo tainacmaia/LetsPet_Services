@@ -1,4 +1,5 @@
 ﻿using LetsPet854.Business;
+using LetsPet854.Domain.Services;
 
 
 namespace LetsPet854.Presentation
@@ -11,6 +12,7 @@ namespace LetsPet854.Presentation
 
         public static void DefaultMenu()
         {
+
             Console.Clear();
             Console.WriteLine("Opções de serviço:");
             Console.WriteLine("1 - Cadastro de Serviços e Descontos\n2 - Buscar serviço\n3 - Relatório de serviços prestados\n4 - Relatório de produtos por serviço prestado");
@@ -48,5 +50,16 @@ namespace LetsPet854.Presentation
                 Console.WriteLine("Menu de serviços encerrado.");
             }
         }
+    }
+
+    public class TesteIMenu
+    {
+        private readonly IService Teste;
+
+        public TesteIMenu(IService teste)
+        {
+            Teste = teste;
+        }
+
     }
 }
